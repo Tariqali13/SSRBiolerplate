@@ -2,33 +2,11 @@
   "name": "react-ssr-boilerplate",
   "version": "5.1.0",
   "private": true,
-  "engines": {
-    "node": ">=10.15"
-  },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node scripts/startProd.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "start:prod": "node scripts/startProd.js",
-    "lint": "eslint src/**/*.js",
-    "format": "prettier --write \"src/**/*.{js,json,css,md}\"",
-    "docker:build": "docker build --rm -t cullenjett/react-ssr-boilerplate .",
-    "docker:start": "docker run --rm -it -p 3000:3000 cullenjett/react-ssr-boilerplate",
-    "docker": "npm run docker:build && npm run docker:start"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint"
-    ],
-    "*.{js,json,css,md}": [
-      "npm run format",
-      "git add"
-    ]
+    "start:prod": "node scripts/start.js"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",

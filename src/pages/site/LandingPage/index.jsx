@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
 import Loadable from 'react-loadable';
-// import Features from './Features.jsx';
+import Features from './Features.jsx';
 
 const LoadablePublicTemplate = Loadable({
-  loader: () =>
-    import(
-      /* webpackChunkName: 'home' */ '../../../components/Templates/public/index.jsx'
-    ),
+  loader: () => import('../../../components/Templates/public/index.jsx'),
   loading: () => <div>Loading...</div>
 });
 const LoadableAboutSection = Loadable({
