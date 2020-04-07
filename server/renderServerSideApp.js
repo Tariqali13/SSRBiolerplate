@@ -13,7 +13,7 @@ import stats from '../build/react-loadable.json';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducers from '../store/reducers';
+import reducers from '../src/store/reducers';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 

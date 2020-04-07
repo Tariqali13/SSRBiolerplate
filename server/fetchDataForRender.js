@@ -3,7 +3,7 @@ import ssrPrepass from 'react-ssr-prepass';
 import chalk from 'chalk';
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducers from "../store/reducers";
+import reducers from "../src/store/reducers";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
