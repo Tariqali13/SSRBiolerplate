@@ -1,9 +1,9 @@
 import React from 'react';
 import ssrPrepass from 'react-ssr-prepass';
 import chalk from 'chalk';
-import thunk from "redux-thunk";
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducers from "../src/store/reducers";
+import reducers from '../src/store/reducers';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
@@ -12,7 +12,7 @@ export const fetchDataForRender = (ServerApp, req) => {
 
   return ssrPrepass(<ServerApp data={data} location={req.url} />, element => {
     if (element && element.type && element.type.fetchData) {
-      return element.type.fetchData(store).then(d => {
+      return element.type.fetchData(req).then(d => {
         Object.keys(d).forEach(key => {
           if (data[key]) {
             logDuplicateKeyMessage(key, element.type.name);

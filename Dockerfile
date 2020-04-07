@@ -1,23 +1,23 @@
-# build ===============================
-FROM node:10 as build
+# # build ===============================
+# FROM node:10 as build
 
-WORKDIR /react-ssr-boilerplate
+# WORKDIR /react-ssr-boilerplate
 
-COPY package*.json ./
+# COPY package*.json ./
 
-RUN npm install
+# RUN npm install
 
-COPY . .
+# COPY . .
 
-RUN npm run build
+# RUN npm run build
 
-# run ===============================
-FROM node:10-alpine as run
+# # run ===============================
+# FROM node:10-alpine as run
 
-WORKDIR /react-ssr-boilerplate
+# WORKDIR /react-ssr-boilerplate
 
-COPY --from=build /react-ssr-boilerplate .
+# COPY --from=build /react-ssr-boilerplate .
 
-EXPOSE 3000
+# EXPOSE 3000
 
-CMD ["npm", "run", "start:prod"]
+# CMD ["npm", "run", "start:prod"]

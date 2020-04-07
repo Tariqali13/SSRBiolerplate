@@ -51,7 +51,7 @@ const cssLinks = bundles => {
 const preloadScripts = bundles => {
   const mainJS = assetManifest['main.js'];
   const bundleFilePaths = bundles
-    .filter(bundle => bundle.file.match(/\.js$/))
+    .filter(bundle => bundle.file.match(/\.(js|jsx)$/))
     .map(jsBundle => `${PUBLIC_URL}/${jsBundle.file}`);
 
   return [...bundleFilePaths, mainJS]
@@ -62,7 +62,7 @@ const preloadScripts = bundles => {
 const jsScripts = bundles => {
   const mainJS = assetManifest['main.js'];
   const bundleFilePaths = bundles
-    .filter(bundle => bundle.file.match(/\.js$/))
+    .filter(bundle => bundle.file.match(/\.(js|jsx)$/))
     .map(jsBundle => `${PUBLIC_URL}/${jsBundle.file}`);
 
   return [...bundleFilePaths, mainJS]

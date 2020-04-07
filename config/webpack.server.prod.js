@@ -63,5 +63,6 @@ module.exports = {
       }
     ]
   },
-  externals: [nodeExternals()]
+  externals: [nodeExternals()],
+  resolve: { extensions: ['.js', '.jsx'] }
 };

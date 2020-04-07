@@ -138,7 +138,8 @@ module.exports = function(envType) {
           'import-glob-loader'
         ].filter(Boolean)
       }
-    ].filter(Boolean)
+    ].filter(Boolean),
+    resolve: { extensions: ['.js', '.jsx'] }
   };
 
   config.optimization = IS_DEV
